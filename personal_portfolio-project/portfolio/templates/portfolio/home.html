@@ -1,0 +1,17 @@
+{% load static %}
+
+<a href="{% url 'blog:all_blogs' %}">Blogs</a>
+<br>
+
+<h1>Home</h1>
+
+<!-- <a href="{% static 'portfolio/Pro Go.pdf' %}">Resume</a> -->
+
+<br>
+
+<img src="{% static 'portfolio/moon.png' %}" alt="">
+
+{% for project in projects %}
+    <p>{{ project.title }}</p>
+    <img src="{{ project.image.url }}" alt="">
+{% endfor %}
